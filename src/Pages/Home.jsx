@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <div>
-      <h1>Store</h1>
+      <h1> Online Store</h1>
       <ul className="mainCards">
         {data?.products?.map((prod) => (
           <div key={prod.id}>

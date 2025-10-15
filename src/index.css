@@ -25,3 +25,60 @@ body {
   margin-bottom: 5rem;
   gap: 1rem;
 }
+
+.proTitle {
+  font-weight: bold;
+  font-size: 2rem;
+  position: relative;
+  left: 25rem;
+  bottom: 17rem;
+}
+
+.proImg {
+  object-fit: cover;
+}
+
+.proDesc {
+  width: 30rem;
+  position: relative;
+  left: 25rem;
+  bottom: 15rem;
+}
+
+.proCategory {
+  font-weight: 700;
+  position: relative;
+  left: 25rem;
+  bottom: 13rem;
+}
+
+.categor {
+}
+
+.proPrice {
+  font-weight: 700;
+  position: relative;
+  left: 25rem;
+  bottom: 9rem;
+}
+
+.proRate {
+  font-weight: 700;
+  position: relative;
+  left: 25rem;
+  bottom: 12rem;
+}
+
+.proBrand {
+  font-weight: 700;
+  position: relative;
+  left: 25rem;
+  bottom: 14rem;
+}
+
+.proWaranty {
+  font-weight: 700;
+  position: relative;
+  left: 25rem;
+  bottom: 11rem;
+}
