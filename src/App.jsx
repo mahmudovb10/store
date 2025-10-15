@@ -1,9 +1,9 @@
-import { Route, Router, Routes } from "react-router-dom";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
 import MainLayout from "./layout/MainLayout";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +22,10 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/singleproduct/:id",
+          element: <SingleProduct />,
         },
       ],
     },
