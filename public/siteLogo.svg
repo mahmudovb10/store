@@ -1,0 +1,8 @@
+<!-- Save as logo_cart.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <path d="M20 30 L35 30 L45 70 L90 70 L82 40 L42 40" fill="none" stroke="#0F766E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <circle cx="50" cy="80" r="5" fill="#0F766E"></circle>
+  <circle cx="78" cy="80" r="5" fill="#0F766E"></circle>
+  <path d="M65 20 C75 16 85 16 95 20" stroke="#10B981" stroke-width="3" fill="none" stroke-linecap="round"></path>
+  <path d="M68 26 C77 24 83 24 92 26" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round"></path>
+</svg>
