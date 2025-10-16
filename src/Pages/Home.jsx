@@ -11,12 +11,11 @@ function Home() {
   return (
     <div>
       <h1 className="text-3xl font-bold text-center mt-6">Online Store</h1>
-      {/* ✅ Responsiv grid — faqat shu joy o‘zgartirildi */}
       <ul className="mainCards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center mt-10 mb-10">
         {data?.products?.map((prod) => (
-          <div key={prod.id}>
+          <li key={prod.id} className="list-none">
             <Link to={`/singleproduct/${prod.id}`}>
-              <div className="card bg-base-100 w-80 md:w-96 shadow-sm hover:shadow-md transition">
+              <div className="card bg-base-100 w-80 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition">
                 <figure>
                   <img
                     src={prod.thumbnail}
@@ -38,7 +37,7 @@ function Home() {
                 </div>
               </div>
             </Link>
-          </div>
+          </li>
         ))}
       </ul>
     </div>

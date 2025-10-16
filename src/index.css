@@ -39,20 +39,28 @@ body {
   display: block;
   margin: 0 auto;
   object-fit: cover;
+  position: relative;
+  right: 30rem;
 }
 
 .proTitle {
   font-weight: bold;
   font-size: 2rem;
   margin-top: 2rem;
-  text-align: center;
+  text-align: start;
+  position: relative;
+  bottom: 25rem;
+  left: 21.5rem;
 }
 
 .proDesc {
   width: 100%;
   max-width: 600px;
   margin: 1rem auto;
-  text-align: center;
+  text-align: start;
+  position: relative;
+  bottom: 25rem;
+  left: 5rem;
 }
 
 .proBrand,
@@ -61,8 +69,10 @@ body {
 .proWaranty,
 .proPrice {
   font-weight: 700;
-  text-align: center;
   margin-top: 0.5rem;
+  position: relative;
+  bottom: 25rem;
+  left: 21.5rem;
 }
 
 .proPrice {
