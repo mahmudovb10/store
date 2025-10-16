@@ -11,9 +11,7 @@ function MainLayout() {
 
   return (
     <div className="container mx-auto px-3">
-      {/* === Navbar === */}
       <header className="navbar bg-base-100 shadow-sm mb-6 rounded-xl flex flex-wrap justify-between items-center px-2 sm:px-4">
-        {/* Chap tomonda Logo */}
         <div className="navbar-start flex items-center">
           <NavLink
             to={"/"}
@@ -24,9 +22,8 @@ function MainLayout() {
           </NavLink>
         </div>
 
-        {/* O'rtada linklar (faqat md dan boshlab ko'rinadi) */}
-        <div className="navbar-center hidden md:flex">
-          <ul className="menu menu-horizontal px-1">
+        <div className="navbar-center hidden md:flex justify-center w-full h-[1rem]">
+          <ul className="menu menu-horizontal px-1 mt-[-2.5rem]">
             <li>
               <NavLink
                 to="/"
@@ -60,7 +57,6 @@ function MainLayout() {
           </ul>
         </div>
 
-        {/* Mobil ekran uchun burger menyu */}
         <div className="navbar-end md:hidden">
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost">
@@ -97,14 +93,11 @@ function MainLayout() {
         </div>
       </header>
 
-      {/* === Asosiy content === */}
       <main className="min-h-[70vh] px-2 sm:px-4">
         <Outlet />
       </main>
 
-      {/* === Footer === */}
       <footer className="footer bg-base-200 text-base-content p-6 sm:p-10 mt-10 rounded-t-xl flex flex-wrap justify-between gap-8">
-        {/* Har bir nav bo‘limi */}
         <nav className="min-w-[150px]">
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -128,7 +121,6 @@ function MainLayout() {
           <a className="link link-hover">Cookie policy</a>
         </nav>
 
-        {/* Newsletter (pastda to‘liq chiziqda joylashadi) */}
         <form
           onSubmit={inpSubmit}
           className="flex flex-col gap-3 w-full sm:w-auto sm:min-w-[300px]"
