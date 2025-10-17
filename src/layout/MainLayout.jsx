@@ -1,13 +1,27 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation, Link } from "react-router-dom";
 import logo from "/siteLogo.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function MainLayout() {
   const [inp, setInp] = useState("");
+  const [userData, setUserData] = useState({ name: "", url: "" });
+
   const inpSubmit = (e) => {
     e.preventDefault();
     setInp("");
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.name && location.state?.url) {
+      localStorage.setItem("userData", JSON.stringify(location.state));
+      setUserData(location.state);
+    } else {
+      const saved = localStorage.getItem("userData");
+      if (saved) setUserData(JSON.parse(saved));
+    }
+  }, [location.state]);
 
   return (
     <div className="container mx-auto px-3">
@@ -55,6 +69,21 @@ function MainLayout() {
               </NavLink>
             </li>
           </ul>
+
+          <div className="flex relative left-[20rem] gap-[2rem] bottom-[0.7rem]">
+            {userData.name && (
+              <span className="font-semibold">{userData.name}</span>
+            )}
+            {userData.url && (
+              <Link to="/profile">
+                <img
+                  src={userData.url}
+                  alt="user"
+                  className="w-10 h-10 rounded-full object-cover border border-primary mt-[-0.4rem]"
+                />
+              </Link>
+            )}
+          </div>
         </div>
 
         <div className="navbar-end md:hidden">
@@ -79,6 +108,9 @@ function MainLayout() {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
+              <li>
+                <NavLink to="/profile">Profile</NavLink>
+              </li>
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
@@ -112,13 +144,6 @@ function MainLayout() {
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
-        </nav>
-
-        <nav className="min-w-[150px]">
-          <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
         </nav>
 
         <form

@@ -7,6 +7,7 @@ import SingleProduct from "./components/SingleProduct";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import Profile from "./components/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,10 +28,26 @@ function App() {
         </ProtectedRoute>
       ),
       children: [
-        { index: true, element: <Home /> },
-        { path: "/about", element: <About /> },
-        { path: "/contact", element: <Contact /> },
-        { path: "/singleproduct/:id", element: <SingleProduct /> },
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/singleproduct/:id",
+          element: <SingleProduct />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
       ],
     },
   ]);

@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [url, setUrl] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -18,6 +20,11 @@ function Register() {
     } catch (err) {
       setError("❌ Email allaqachon ishlatilgan yoki parol kuchsiz!");
     }
+    navigate("/", { state: { name, url, email } });
+
+    setTimeout(() => {
+      navigate("/profile");
+    }, 1000);
   };
 
   return (
@@ -28,6 +35,22 @@ function Register() {
         </h2>
 
         <form onSubmit={handleRegister} className="flex flex-col gap-4">
+          <input
+            type="text"
+            placeholder="User name"
+            className="input input-bordered w-full"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            type="url"
+            placeholder="Photo URL"
+            className="input input-bordered w-full"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            required
+          />
           <input
             type="email"
             placeholder="Email"
