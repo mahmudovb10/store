@@ -22,7 +22,7 @@ function Register() {
     navigate("/", { state: { name, url, email } });
 
     setTimeout(() => {
-      navigate("/profile");
+      navigate("/profile", { state: { name, url, email } });
     }, 1000);
   };
 

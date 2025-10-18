@@ -127,3 +127,27 @@ body {
     gap: 0.5rem;
   }
 }
+
+.userDataImg {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileContainer {
+  display: flex;
+}
+
+.userDataName {
+  font-weight: 600;
+  font-size: 1.5rem;
+  position: relative;
+  left: 2rem;
+  top: 1rem;
+}
+
+.userDataEmail {
+  position: relative;
+  top: 2rem;
+}
